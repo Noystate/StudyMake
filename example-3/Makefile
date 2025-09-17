@@ -1,4 +1,21 @@
-# Переменные
+TARGET = program
+CXX = g++
+CXXFLAGS = -Wall -std=c++11
+
+# Автоматически находим все .cpp файлы
+SRCS = $(wildcard *.cpp)
+OBJS = $(SRCS:.cpp=.o)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+.PHONY: clean# Переменные
 TARGET = program
 SRC = Cazino-Royal.cpp
 OBJ = Cazino-Royal.o
