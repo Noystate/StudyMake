@@ -1,15 +1,15 @@
 # Переменные
 TARGET = program
-SRC = main.cpp
-OBJ = main.o
+SRC = Cazino-Royal.cpp
+OBJ = Cazino-Royal.o
 CXX = g++
 CFLAGS = -Wall -std=c++11
 
 $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
 
-main.o: main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp
+Cazino-Royal.o: Cazino-Royal.cpp
+	$(CXX) $(CXXFLAGS) -c Cazino-Royal.cpp
 
 clean:
 	rm -f $(OBJ) $(TARGET)
