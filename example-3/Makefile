@@ -1,18 +1,15 @@
 # Переменные
 TARGET = program
-SRC = main.c helper.c
-OBJ = main.o helper.o
-CC = gcc
-CFLAGS = -Wall
+SRC = main.cpp
+OBJ = main.o
+CXX = g++
+CFLAGS = -Wall -std=c++11
 
 $(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
 
-main.o: main.c helper.h
-	$(CC) $(CFLAGS) -c main.c
-
-helper.o: helper.c helper.h
-	$(CC) $(CFLAGS) -c helper.c
+main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp
 
 clean:
 	rm -f $(OBJ) $(TARGET)
